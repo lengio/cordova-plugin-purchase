@@ -317,7 +317,11 @@ var CdvPurchase;
      *   error: (message) => { remoteLog('ERROR', message); }
      * }
      */
-    Logger.console = window.console;
+    Logger.console = typeof window !== 'undefined' ? window.console : {
+        log: () => {},
+        warn: () => {},
+        error: () => {}
+    };
     CdvPurchase.Logger = Logger;
     const LOG_LEVEL_STRING = ["QUIET", "ERROR", "WARNING", "INFO", "DEBUG"];
     function toString(o) {
