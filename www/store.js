@@ -2004,7 +2004,7 @@ var CdvPurchase;
     CdvPurchase.Store = Store;
 })(CdvPurchase || (CdvPurchase = {}));
 // Create the CdvPurchase.store object at startup.
-if (window.cordova) {
+if (typeof window !== 'undefined' && window.cordova) {
     setTimeout(initCDVPurchase, 0); // somehow with Cordova this needs to be delayed.
 }
 else {
