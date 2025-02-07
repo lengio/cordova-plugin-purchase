@@ -2007,7 +2007,7 @@ var CdvPurchase;
 if (typeof window !== 'undefined' && window.cordova) {
     setTimeout(initCDVPurchase, 0); // somehow with Cordova this needs to be delayed.
 }
-else {
+else if (typeof window !== 'undefined') {
     initCDVPurchase();
 }
 /** @private */
